@@ -6,7 +6,7 @@ services:
     # Imagem base do container
     build: .
     # Nome do container para facilitar execução
-    container_name: meu_banco
+    container_name: store_manager
     # Mesmo que `docker run -t`
     tty: true
     # Mesmo que `docker run -i`
@@ -41,7 +41,7 @@ services:
 
   # Serviço que irá rodar o banco de dados
   db:
-    container_name: meu_banco
+    container_name: store_manager_db
     image: mysql:5.7
     environment:
       MYSQL_ROOT_PASSWORD: '1234'
@@ -55,7 +55,7 @@ networks:
   # Rede padrão, criada automaticamente
   default:
     # Dá um nome específico à rede padrão
-    name: meu_banco
+    name: store_manager_net
 
 volumes:
   node_modules:

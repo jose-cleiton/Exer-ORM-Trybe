@@ -2,23 +2,40 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+    queryInterface.bulkInsert('Stores', [
+      {
+        name: "Arapúa",
+        description: "Aqui voçê tem negócio."        
+      },
+      {
+        name: "Bebidas",
+        description: "Aqui voçê tem bebidas."
+
+      },
+    {
+        name: "Carnes",
+        description: "Aqui voçê tem carnes."
+    },
+    {
+        name: "Doces",
+        description: "Aqui voçê tem doces."
+
+    },
+    {
+        name: "Frutas",
+        description: "Aqui voçê tem frutas."
+    },
+    {
+        name: "Hortifruti",
+        description: "Aqui voçê tem hortifruti."
+    }
+
+  
+  ]);
+   
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    queryInterface.bulkDelete('Stores', null, {});
   }
 };
